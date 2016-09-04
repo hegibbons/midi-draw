@@ -3,11 +3,11 @@ $( document ).ready(function() {
                               window.mozRequestAnimationFrame || 
                               window.webkitRequestAnimationFrame || 
                               window.msRequestAnimationFrame;
-  var mod = 0;
+  var mod = 0.01;
   var increase = 2;
 
   function drawMidi() {
-      mod += 0.01
+      mod += (mod + mod);
 
       console.log(mod, increase)
       var canvas = document.getElementById('canvas');

@@ -9,7 +9,6 @@ $( document ).ready(function() {
   function drawMidi() {
       mod += (mod + mod));
 
-      console.log(mod, increase)
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
       var center = 250;
@@ -19,7 +18,7 @@ $( document ).ready(function() {
       var thirdPos = center * (2/3);
       var pi = Math.PI;
       
-      var styles = {'width':smallRadius,'height':smallRadius,'radius':smallRadius};
+      var styles = {"width":smallRadius,"height":smallRadius,"radius":smallRadius};
       console.log(styles);
       $(".dot").css(styles);
       

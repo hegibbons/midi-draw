@@ -18,9 +18,13 @@ $( document ).ready(function() {
       var smallRadius = bigRadius / 8;
       var thirdPos = center * (2/3);
       var pi = Math.PI;
+      
+      var styles = {'width':smallRadius,'height':smallRadius,'radius':smallRadius};
+      $(".dot").css(styles);
+      
       context.lineWidth = 3;
       context.strokeStyle = '#292929';
-
+      
       context.beginPath();
       context.arc(center, center, bigRadius, (6.75 * pi) / 12, (5.2 * pi) / 12  * mod);
       context.stroke();
@@ -61,7 +65,7 @@ $( document ).ready(function() {
       requestAnimationFrame(drawMidi);
       } else {
       context.clearRect(0, 0, canvas.width, canvas.height);
-              context.beginPath();
+      context.beginPath();
       context.arc(center, center, bigRadius, (6.75 * pi) / 12, (5.2 * pi) / 12);
       context.stroke();
       context.closePath();
@@ -70,7 +74,8 @@ $( document ).ready(function() {
       context.beginPath();
       context.arc(center, center * .53, smallRadius, 0, 2 * pi);
       context.stroke();
-  
+      var topStyles = {'top':center * .53, 'left':center}
+      $('.top').css(topStyles);
       //mid dots
       //left
       context.beginPath();

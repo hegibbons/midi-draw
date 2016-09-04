@@ -7,7 +7,7 @@ $( document ).ready(function() {
   var increase = 2;
 
   function drawMidi() {
-      mod += mod;
+      mod += 0.001;
 
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
@@ -18,8 +18,9 @@ $( document ).ready(function() {
       var thirdPos = center * (2/3);
       var pi = Math.PI;
       
-      var styles = {"width":smallRadius,"height":smallRadius,"border-radius":smallRadius};
-      console.log(styles);
+      var linkRadius = smallRadius * 2;
+
+      var styles = {"width":linkRadius,"height":linkRadius,"border-radius":linkRadius};
       $(".dot").css(styles);
       
       context.lineWidth = 3;
@@ -62,45 +63,57 @@ $( document ).ready(function() {
       context.stroke();
       
       if (mod < 1) {
-      requestAnimationFrame(drawMidi);
+        requestAnimationFrame(drawMidi);
       } else {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      context.beginPath();
-      context.arc(center, center, bigRadius, (6.75 * pi) / 12, (5.2 * pi) / 12);
-      context.stroke();
-      context.closePath();
-
-      //top dot
-      context.beginPath();
-      context.arc(center, center * .53, smallRadius, 0, 2 * pi);
-      context.stroke();
-      var topStyles = {'top':center * .53, 'left':center}
-      $('.top').css(topStyles);
-      //mid dots
-      //left
-      context.beginPath();
-      context.arc(thirdPos, thirdPos, smallRadius, 0, 2 * pi);
-      context.stroke();
-      
-      //right
-      context.beginPath();
-      context.arc(center * 4/3, thirdPos, smallRadius, 0, 2 * pi);
-      context.stroke();
-      
-      //low dots
-      //left
-      context.beginPath();
-      context.arc(center * .53, center, smallRadius, 0, 2 * pi);
-      context.stroke();
-      //right
-      context.beginPath();
-      context.arc(center * 1.465, center, smallRadius, 0, 2 * pi);
-      context.stroke();
-      
-      //bottom semicircle
-      context.beginPath();
-      context.arc(center, center * 1.79, bigRadius / 5, pi, 2 * pi);
-      context.stroke();  
+          
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.beginPath();
+          context.arc(center, center, bigRadius, (6.75 * pi) / 12, (5.2 * pi) / 12);
+          context.stroke();
+          context.closePath();
+    
+          //top dot
+          context.beginPath();
+          context.arc(center, center * .53, smallRadius, 0, 2 * pi);
+          context.stroke();
+          
+          var topStyles = {'left':center - smallRadius, 'top':center * .53 - smallRadius};
+          $('.top').css(topStyles);
+          
+          //mid dots
+          //left
+          context.beginPath();
+          context.arc(thirdPos, thirdPos, smallRadius, 0, 2 * pi);
+          context.stroke();
+          var lMidStyles = {'left':thirdPos - smallRadius, 'top':thirdPos - smallRadius};
+          $('.lMid').css(lMidStyles);
+          
+          //right
+          context.beginPath();
+          context.arc(center * 4/3, thirdPos, smallRadius, 0, 2 * pi);
+          context.stroke();
+          var rMidStyles = {'left':center * 4/3 - smallRadius, 'top':thirdPos - smallRadius};
+          $('.rMid').css(rMidStyles);
+          
+          //low dots
+          //left
+          context.beginPath();
+          context.arc(center * .53, center, smallRadius, 0, 2 * pi);
+          context.stroke();
+          var lBotStyles = {'left':center * .53 - smallRadius, 'top':center - smallRadius};
+          $('.lBot').css(lBotStyles);
+          
+          //right
+          context.beginPath();
+          context.arc(center * 1.465, center, smallRadius, 0, 2 * pi);
+          context.stroke();
+          var rBotStyles = {'left':center * 1.465 - smallRadius, 'top':center - smallRadius};
+          $('.rBot').css(rBotStyles);
+          
+          //bottom semicircle
+          context.beginPath();
+          context.arc(center, center * 1.79, bigRadius / 5, pi, 2 * pi);
+          context.stroke();  
       }
   }
 

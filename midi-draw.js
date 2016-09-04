@@ -18,7 +18,7 @@ $( document ).ready(function() {
       var thirdPos = center * (2/3);
       var pi = Math.PI;
       
-      var styles = {"width":smallRadius,"height":smallRadius,"radius":smallRadius};
+      var styles = {"width":smallRadius,"height":smallRadius,"border-radius":smallRadius};
       console.log(styles);
       $(".dot").css(styles);
       

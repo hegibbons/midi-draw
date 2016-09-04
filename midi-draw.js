@@ -7,7 +7,7 @@ $( document ).ready(function() {
   var increase = 2;
 
   function drawMidi() {
-      mod += 0.01;
+      mod += (mod + mod));
 
       console.log(mod, increase)
       var canvas = document.getElementById('canvas');

@@ -20,6 +20,7 @@ $( document ).ready(function() {
       var pi = Math.PI;
       
       var styles = {'width':smallRadius,'height':smallRadius,'radius':smallRadius};
+      console.log($(".dot"), values)
       $(".dot").css(styles);
       
       context.lineWidth = 3;

@@ -26,6 +26,7 @@ $( document ).ready(function() {
       context.lineWidth = 3;
       context.strokeStyle = '#292929';
       
+      //large circle
       context.beginPath();
       context.arc(center, center, bigRadius, (6.75 * pi) / 12, (5.2 * pi) / 12  * mod);
       context.stroke();
@@ -67,8 +68,9 @@ $( document ).ready(function() {
       } else {
           
           context.clearRect(0, 0, canvas.width, canvas.height);
+          //large circle
           context.beginPath();
-          context.arc(center, center, bigRadius, (6.75 * pi) / 12, (5.2 * pi) / 12);
+          context.arc(center, center, bigRadius, (6.75 * pi) / 12, (5.25 * pi) / 12);
           context.stroke();
           context.closePath();
     

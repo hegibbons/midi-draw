@@ -3,7 +3,7 @@ $( document ).ready(function() {
                               window.mozRequestAnimationFrame || 
                               window.webkitRequestAnimationFrame || 
                               window.msRequestAnimationFrame;
-  var mod = 0.0001;
+  var mod = 0.00001;
   var increase = 2;
 
   function drawMidi() {

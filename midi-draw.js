@@ -3,12 +3,14 @@ $( document ).ready(function() {
                               window.mozRequestAnimationFrame || 
                               window.webkitRequestAnimationFrame || 
                               window.msRequestAnimationFrame;
-  var mod = 0.01;
+  var mod = 0;
   var increase = 2;
+  var alpha = 0;
 
   function drawMidi() {
       mod += 0.01;
-
+      alpha += 0.01;
+      
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
       var center = 250;
@@ -25,6 +27,7 @@ $( document ).ready(function() {
       
       context.lineWidth = 3;
       context.strokeStyle = '#292929';
+      context.globalAlpha = alpha;
       
       //large circle
       context.beginPath();

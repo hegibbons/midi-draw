@@ -125,3 +125,11 @@ $( document ).ready(function() {
   drawMidi();
   
 });
+
+$(".local").click(function() {
+  console.log("run");
+  $(".container").velocity({ 
+  scale: 0.5,
+  translateX: 150
+}, 2000);
+})
